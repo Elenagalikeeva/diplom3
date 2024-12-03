@@ -1,0 +1,306 @@
+body{
+    background-image: url(https://cs11.pikabu.ru/post_img/big/2020/07/28/2/1595896862195370102.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 0;
+    margin: 0;
+}
+
+.wrap{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20 px;
+    box-sizing: border-box;
+}
+
+.block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 30px 30px 60px;
+}
+
+.text{
+    width: 360px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.element, .count{
+    background: #FFF;
+    margin: 20px 0;
+}
+
+.block img{
+    max-width: 360px;
+}
+
+.content h1{
+    text-align: center;
+    margin: 100px 0 60px;
+    font-size: 36px;
+}
+
+.content{
+    margin: 100px;
+}
+.img + h2, .text h2{
+    text-align: center;
+    margin: 20px 0;
+    font-size: 30px;
+}
+
+.wrap1{
+    padding: 15px 0;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrap1 ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.wrap1 li{
+    margin-left: 20px;
+
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px; */
+}
+.wrap1 a{
+    color: rgb(70, 40, 99);
+    padding: 8px 5px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+ul{
+    list-style: none;
+}
+
+
+.element1{
+    background: #FFF;
+    margin: 40px;
+    border-radius: 8px;
+    max-width: 500px;
+}
+
+.top a{
+    padding: 20px;
+    display: block;
+}
+
+.wrap h1{
+    color:rgb(70, 40, 99);
+}
+
+h2{
+    color:rgb(70, 40, 99);
+}
+
+.text a{
+    color: rgb(70, 40, 99);
+}
+
+.bg{
+    padding: 30px;
+    box-sizing: border-box;
+    margin: 40px;
+    box-shadow: 0 2px 12px  rgb(70, 40, 99);
+    border-radius: 5px;
+}
+
+
+button{
+    border-radius: 20px;
+    padding: 7px 20px;
+    font-size: 12px;
+    cursor: pointer;
+    background: rgb(70, 40, 99);
+    color: #FFF;
+    border-color: rgb(70, 40, 99);
+}
+
+.top{
+    padding: 1px 15px;
+    margin-top: 0;
+    background: transparent; 
+    border: 0;
+    color: rgb(70, 40, 99);
+    box-shadow: inset 0 0 0 0 transparent;
+    font-size: 20px;
+}
+
+.logo{
+    color: rgb(70, 40, 99);
+    font-size: 20px;
+}
+
+.register{
+    padding: 30px;
+    box-sizing: border-box;
+    margin: 40px;
+    box-shadow: 0 2px 12px  rgb(70, 40, 99);
+    border-radius: 5px;
+    color: #FFF;
+}
+
+.about>p, .about>ul{
+    color: #FFF;
+}
+
+hr{
+    border: none; 
+    height: 2px; 
+    background-color: #FFF; 
+    width: 100%; 
+    margin: 20px auto; 
+}
+
+li{
+    margin-bottom: 20px;
+}
+
+.logo-top {
+  float: left;
+  margin: 0px 0px 5px 30px;
+}
+
+.phone-number {
+  width: 200px;
+  height: 40px;
+  float: right;
+  margin: 20px 10px 5px 20px;
+  color: #FFF;
+}
+
+.whatsapp-number {
+  width: 35px;
+  height: 35px;
+  float: right;
+  margin: 15px 30px 30px 20px;
+  background: url(./img/wa-image-color.png) no-repeat center top / cover;
+  transition: 0.5s ease-in-out;
+}
+.telegram-number {
+  width: 35px;
+  height: 35px;
+  float: right;
+  margin: 15px 10px 30px 20px;
+  background: url(./img/tg-image-color.png) no-repeat center top / cover;
+  transition: 0.5s ease-in-out;
+}
+
+.text-3 {
+  color:  rgb(70, 40, 99);
+  font-size: 2em;
+  text-align: center;
+  padding-top: 7%;
+  padding-bottom: 7%;
+  background-color: rgb(255, 255, 255, 0.5);
+  display: inline-block;
+  border-radius: 10px;
+  padding: 3px 20px;
+  margin-bottom: 25px;
+}
+
+.white{
+    background-color: rgb(255, 255, 255, 0.5);
+    display: inline-block;
+    border-radius: 10px;
+    padding: 3px 20px;
+    margin-bottom: 25px;
+}
+
+.product_card {
+	margin: 10px;
+}
+
+.table_one {
+	font-size: 1.4em;
+}
+
+.class_form {
+  text-align: center;
+  padding-bottom: 7%;
+}
+.logo-bottom {
+
+  margin: 0 0 5px;
+}
+.thank{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(100vh - 480px);
+    margin-bottom: 185px;
+}
+
+.form-group{
+    color: #FFF;
+}
+
+.slaider_p {
+	height: 100%;
+	width: 100%;
+	float: left;
+	margin: 0px 0px 30px 0px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: rgba(70, 40, 99, 0.5);
+	text-align: center;
+	color: #FFF;
+    font-size: 20px;
+}
+
+.reviews {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+
+.block_rev {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+   
+    margin: 30px 30px 60px;
+}
+
+.element_rev {
+    background: #FFF;
+    margin: 20px 0; 
+    border-radius: 8px;
+}
+
+.element_rev img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 5px;
+}
+
+.date{
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.review_name{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}

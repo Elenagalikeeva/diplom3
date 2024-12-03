@@ -1,0 +1,23 @@
+{% extends 'kam/base.html' %}
+{% block content %}
+
+<h2>Морские туры</h2>
+
+<div class="block">
+    {% for mor in more %}
+    <div class="element">
+        <div>
+            <img src="{{ mor.image.url }}" alt="">
+        </div>
+        <div class="text">
+            <h2><a href="" target="_blank"> {{ mor.title }}</a></h2>
+            <p>{{ mor.description }}</p>
+            <h4>{{ mor.price }}</h4>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

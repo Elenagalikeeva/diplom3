@@ -1,0 +1,16 @@
+<h1>Отзыв</h1>
+
+<ul>
+    {% for review in reviews %}
+    <li>
+        <strong>{{ review.name }}</strong> ({{ review.created_at|date:"d.m.Y H:i" }})<br>
+        {{ review.content }}
+    </li>
+    {% endfor %}
+</ul>
+
+
+
+
+
+

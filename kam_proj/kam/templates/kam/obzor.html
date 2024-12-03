@@ -1,0 +1,23 @@
+{% extends 'kam/base.html' %}
+{% block content %}
+
+<h2>Обзорные туры</h2>
+
+<div class="block">
+    {% for obz in obzor %}
+    <div class="element">
+        <div>
+            <img src="{{ obz.image.url }}" alt="">
+        </div>
+        <div class="text">
+            <h2><a href="" target="_blank"> {{ obz.title }}</a></h2>
+            <p>{{ obz.description }}</p>
+            <h4>{{ obz.price }}</h4>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

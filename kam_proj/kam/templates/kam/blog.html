@@ -1,0 +1,16 @@
+{% extends 'kam/base.html' %}
+
+{% block content %}
+
+<h1>Актуальные экскурсии</h1>
+{% for blog in blogs %}
+<div class="element1">
+    <h2 class="top"><a href="{% url 'detail' blog.id %}">{{ blog.title }}</a></h2>
+    <div class="text">
+        <p>{{ blog.description }}</p>
+    </div>
+
+
+</div>
+{% endfor %}
+{% endblock %}

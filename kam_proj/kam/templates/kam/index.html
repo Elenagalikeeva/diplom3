@@ -1,0 +1,140 @@
+{% extends 'kam/base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Туроператор KamchaTour</h1>
+
+{% include 'kam/carusel.html' %}
+
+<h2>Активные туры на Камчатке</h2>
+
+<div class="block">
+    <div class="element">
+        <div class="text">
+            <h2><a href="vosho/" target="_blank">С восхождением</a></h2>
+        </div>
+    </div>
+    <div class="element">
+        <div class="text">
+            <h2><a href="more/" target="_blank">Морские</a></h2>
+        </div>
+    </div>
+    <div class="element">
+        <div class="text">
+            <h2><a href="obzor/" target="_blank">Обзорные</a></h2>
+        </div>
+    </div>
+    <div class="element">
+        <div class="text">
+            <h2><a href="vse/" target="_blank">Все туры</a></h2>
+        </div>
+    </div>
+</div>
+
+<h2 class="white">Мы рекомендуем эти туры для первого посещения Камчатки!</h2>
+
+<div class="block">
+    {% for project in projects %}
+    <div class="element">
+        <div>
+            <img src="{{ project.image.url }}" alt="">
+        </div>
+        <div class="text">
+            <h2><a href="{{ project.url }}" target="_blank"> {{ project.title }}</a></h2>
+            <p>{{ project.description }}</p>
+            <h4>{{ project.price }}</h4>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="about">
+    <h2 class="white">О нас</h2>
+    <p>Добро пожаловать в KamchaTour! Мы — команда увлеченных профессионалов, которые стремятся подарить вам
+        незабываемые впечатления от путешествий по этому удивительному и уникальному региону России.
+        Камчатка — это не только вулканы и гейзеры, но и потрясающая природа, богатая флора и фауна, а также культура
+        коренных народов. Мы предлагаем разнообразные туры, которые позволят вам насладиться всеми гранями этого края:
+        от активного отдыха на свежем воздухе до познавательных экскурсий.
+    </p>
+    <br>
+    <hr>
+    <br>
+    <h2 class="white">Почему выбирают нас?</h2>
+    <ul>
+        <li>Профессионализм: Наша команда состоит из опытных гидов и организаторов, которые знают Камчатку как свои пять
+            пальцев.
+        </li>
+        <li>Безопасность: Мы заботимся о вашей безопасности и комфорте на каждом этапе путешествия.
+        </li>
+        <li>Личный подход: Мы ценим каждого клиента и стремимся создать уникальный опыт, который останется в памяти на
+            всю жизнь.
+        </li>
+    </ul>
+    <p>Присоединяйтесь к нам и откройте для себя волшебство Камчатки! Ваше приключение начинается здесь!</p>
+</div>
+
+
+<h1>Отзывы</h1>
+<div class="block_rev">
+    {% for review in reviews %}
+    <div class="element_rev">
+        {% if review.image %}
+        <div>
+            <img src="{{ review.image.url }}" alt="">
+        </div>
+        {% endif %}
+        <div class="text">
+            <div class="review_name">
+                {{ review.name }}
+            </div>
+            {{ review.description }}
+            <div class="date">
+                {{ review.created_at }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<a href="{% url 'leave_review' %}"><button type="submit">Оставить отзыв</button></a>
+
+
+<!--<h2>Оставить отзыв</h2>-->
+<!--<form method="post" enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+<!--    {{ form1.as_p }}-->
+<!--    <button type="submit">Отправить</button>-->
+<!--</form>-->
+
+
+
+<!-- форма -->
+<section>
+    <div class="container class_form">
+        <h1 class="text-3">Забронируйте ваше приключение уже сегодня и откройте для себя магию Камчатки!</h1>
+        <div class="row justify-content-center">
+            <form action="{% url 'thanks_page' %}" method="POST" style="width: 50%;">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Имя</label><br>
+                    {{ form.name }}
+                    <div class="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Телефон</label><br>
+                    {{ form.phone }}
+                    <div class="">
+                    </div>
+                </div>
+                <div style="float: right;" class="form-group row">
+                    <button type="submit" class="btnbtn-success">Оставить заявку</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
+

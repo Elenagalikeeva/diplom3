@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <title>Туры на Камчатку | Активный отдых на Камчатке</title>
+
+
+</head>
+<body>
+<div class="menu">
+    <div class="wrap1">
+        <ul>
+            <li><a href="{% url 'index' %}">Главная</a></li>
+            {% if user.is_authenticated %}
+            <li class="logo">Пользователь: {{ user.username }}</li>
+            <li><a href="{% url 'kab' %}">Личный кабинет</a></li>
+            <li>
+                <form action="{% url 'logoutuser' %}" method="post">
+                    {% csrf_token %}
+                    <button class="top">Выйти</button>
+                </form>
+            </li>
+            {% else %}
+            <li><a href="{% url 'signupuser' %}">Зарегистрироваться</a></li>
+            <li><a href="{% url 'loginuser' %}">Войти</a></li>
+            {% endif %}
+        </ul>
+        <div class="contact-top">
+            <a class="whatsapp-number" href="https://wa.me/9534888135?text=Здравствуйте!"><img
+                    src="{% static 'kam/wa-image-color.png' %}"
+                    alt=""></a>
+            <a class="telegram-number" href="https://t.me/lenagalikeeva"><img
+                    src="{% static 'kam/tg-image-color.png' %}" alt=""></a>
+            <a class="phone-number text-white" href="tel:+79099999999">
+                <h5>+7(909)-999-99-99</h5></a>
+        </div>
+        <!--        <ul>-->
+        <!--&lt;!&ndash;            <li><a href="{% url 'index' %}">Главная</a></li>&ndash;&gt;-->
+        <!--            &lt;!&ndash;            <li><a href="{% url 'blogs' %}">Актуальные экскурсии</a></li>&ndash;&gt;-->
+        <!--        </ul>-->
+    </div>
+</div>
+
+<div class="content">
+    <div class="wrap">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+
+<div class="contact-top">
+    <a class="whatsapp-number" href="https://wa.me/9534888135?text=Здравствуйте!"><img
+            src="{% static 'kam/wa-image-color.png' %}" alt=""></a>
+    <a class="telegram-number" href="https://t.me/lenagalikeeva"><img src="{% static 'kam/tg-image-color.png' %}"
+                                                                      alt=""></a>
+    <a class="phone-number text-white" href="tel:+79099999999">
+        <h5>+7(909)-999-99-99</h5></a>
+</div>
+
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'kam/base.html' %}
+{% block content %}
+
+<h2>Все туры</h2>
+
+<div class="block">
+    {% for vs in vse %}
+    <div class="element">
+        <div>
+            <img src="{{ vs.image.url }}" alt="">
+        </div>
+        <div class="text">
+            <h2><a href="" target="_blank"> {{ vs.title }}</a></h2>
+            <p>{{ vs.description }}</p>
+            <h4>{{ vs.price }}</h4>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

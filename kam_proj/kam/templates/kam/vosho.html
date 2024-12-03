@@ -1,0 +1,23 @@
+{% extends 'kam/base.html' %}
+{% block content %}
+
+<h2>Туры с восхождением</h2>
+
+<div class="block">
+    {% for vosh in vosho %}
+    <div class="element">
+        <div>
+            <img src="{{ vosh.image.url }}" alt="">
+        </div>
+        <div class="text">
+            <h2><a href="" target="_blank"> {{ vosh.title }}</a></h2>
+            <p>{{ vosh.description }}</p>
+            <h4>{{ vosh.price }}</h4>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}
