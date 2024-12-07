@@ -9,6 +9,10 @@ body{
 
 }
 
+h1{
+    margin-top: 0px;
+}
+
 .wrap{
     max-width: 1300px;
     margin: 0 auto;
@@ -45,8 +49,9 @@ body{
 }
 
 .content{
-    margin-top: 50px;
+    margin-top: 30px;
 }
+
 .img + h2, .text h2{
     text-align: center;
     margin: 20px 0;
@@ -113,6 +118,7 @@ h2{
     margin: 40px;
     box-shadow: 0 2px 12px  rgb(70, 40, 99);
     border-radius: 5px;
+    color: #FFF;
 }
 
 
@@ -328,6 +334,7 @@ li{
 .otz{
     color:  #FFF;
     margin-top: 0px;
+    margin-bottom: 100px;
 }
 
 .otz a{
@@ -345,13 +352,18 @@ li{
 }
 
 .bt{
-    margin-bottom: 350px;
+    margin-bottom: 270px;
 }
 
 .menu{
     margin-right: 0;
 }
 
-.bg{
+.bg2{
     color: #FFF;
+    margin-bottom: 270px;
+}
+
+.otz2{
+    margin-bottom: 30px;
 }
