@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 
 
+
 class Kam(models.Model):
     title = models.CharField(max_length=300)
     description = models.CharField(max_length=300)
@@ -55,11 +56,15 @@ class Vse(models.Model):
 
 
 class Rev(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # name = models.CharField(max_length=100, verbose_name="Имя")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    name = models.CharField(max_length=100, verbose_name="Имя")
     description = models.TextField(verbose_name="Комментарий")
     image = models.ImageField(upload_to='kam/image/', blank=True, null=True, verbose_name="Загрузить аватар")
     created_at = models.DateTimeField(auto_now=True, verbose_name='Дата создания')
 
-    # def __str__(self):
-    #     return self.user
+    def __str__(self):
+        if self.user:
+            return f"{self.user}"
+        if self.name:
+            return f"{self.name}"
+

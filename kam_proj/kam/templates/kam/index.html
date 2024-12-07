@@ -84,7 +84,12 @@
         {% endif %}
         <div class="text">
             <div class="review_name">
+                {% if review.user %}
+                {{ review.user }}
+                {% endif %}
+                {% if review.name %}
                 {{ review.name }}
+                {% endif %}
             </div>
             {{ review.description }}
             <div class="date">
@@ -95,22 +100,15 @@
     {% endfor %}
 </div>
 
-
-<a href="{% url 'leave_review' %}"><button type="submit">Оставить отзыв</button></a>
-
-
-<!--<h2>Оставить отзыв</h2>-->
-<!--<form method="post" enctype="multipart/form-data">-->
-<!--    {% csrf_token %}-->
-<!--    {{ form1.as_p }}-->
-<!--    <button type="submit">Отправить</button>-->
-<!--</form>-->
+<div class="otz">
+    <p>* Чтобы оставить отзыв необходимо <a href="{% url 'loginuser' %}">авторизоваться</a></p>
+</div>
 
 
 
 <!-- форма -->
 <section>
-    <div class="container class_form">
+    <div class="container2">
         <h1 class="text-3">Забронируйте ваше приключение уже сегодня и откройте для себя магию Камчатки!</h1>
         <div class="row justify-content-center">
             <form action="{% url 'thanks_page' %}" method="POST" style="width: 50%;">

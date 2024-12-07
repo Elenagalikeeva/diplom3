@@ -3,6 +3,10 @@
 {% block content %}
 
 <h1>Личный кабинет пользователя</h1>
-
-
+<div class="kab">
+    <p>Оставить отзыв на тур:</p>
+</div>
+<div class="bt">
+    <a href="{% url 'leave_review' %}"><button type="submit">Оставить отзыв</button></a>
+</div>
 {% endblock %}

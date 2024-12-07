@@ -5,7 +5,7 @@ from .models import Rev
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Rev
-        fields = ['user', 'description', 'image']
+        fields = ['description', 'image']
         widgets = {
             'description': forms.Textarea(attrs={'rows': 4, 'cols': 40}),
         }

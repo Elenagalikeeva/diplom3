@@ -8,10 +8,8 @@ from crm.models import Order
 from crm.forms import OrderForm
 from sample.sendmessage import send_telegram
 from .forms import ReviewForm
-from django.contrib.auth.decorators import login_required
 
 
-@login_required
 def leave_review(request):
     if request.method == 'POST':
         form1 = ReviewForm(request.POST, request.FILES)
@@ -19,7 +17,7 @@ def leave_review(request):
             review = form1.save(commit=False)
             review.user = request.user
             review.save()
-            return redirect('leave_review')  # Перенаправление на страницу отзывов после успешного сохранения
+            return redirect('index')
     else:
         form1 = ReviewForm()
 
@@ -34,19 +32,11 @@ def index(request):
     projects = Kam.objects.all()
     reviews = Rev.objects.all()
     form = OrderForm()
-    if request.method == 'POST':
-        form1 = ReviewForm(request.POST, request.FILES)
-        if form1.is_valid():
-            form1.save()
-            return redirect('index')
-    else:
-        form1 = ReviewForm()
 
     context = {
         'projects': projects,
         'form': form,
         'reviews': reviews,
-        'form1': form1,
     }
 
     return render(request, 'kam/index.html', context)
